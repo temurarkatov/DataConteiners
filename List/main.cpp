@@ -366,7 +366,7 @@ List<T> operator+(const List<T>& left, const List<T>& right)
 }
 
 //#define BASE_CHECK
-#define HOME_WORK
+//#define HOME_WORK
 
 void main()
 {
@@ -424,4 +424,12 @@ void main()
 	cout << endl;
 #endif // HOME_WORK
 
+	List<double> d_list = { 2.7, 3.14, 5.8, 8.3 };
+	for (double i : d_list)cout << i << tab;cout << endl;
+
+	List<std::string> s_list = { "Хщрошо", "живёт", "на", "свете", "Вини", "Пух" };
+	for (std::string i : s_list)cout << i << tab;cout << endl;
+	for (List<std::string>::ReverseIterator it = s_list.rbegin(); it != s_list.rend(); ++it)
+		cout << *it << tab;
+	cout << endl;
 }
