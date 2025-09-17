@@ -8,6 +8,8 @@ using std::endl;
 #define tab "\t"
 #define delimiter "\n---------------------------------------------------\n"
 
+
+class ForwardList;
 class Element
 {
 	int Data;		//Значение элемента
@@ -50,6 +52,7 @@ public:
 	{
 		return size;
 	}
+
 	ForwardList()
 	{
 		//Конструктор по умолчанию - создает пустой список.
@@ -57,7 +60,7 @@ public:
 		size = 0;
 		cout << "FLConstructor:\t" << this << endl;
 	}
-	ForwardList(int size) :ForwardList()
+	explicit ForwardList(int size) :ForwardList()
 	{
 		while (size--)push_front(0);
 		cout << "FLSizeConstructor:\t" << this << endl;
@@ -67,6 +70,15 @@ public:
 		//Deep copy (Побитовое копирование):
 		*this = other;
 		cout << "FLCopyConstructor:\t" << this << endl;
+	}
+	ForwardList(const std::initializer_list<int>& il) :ForwardList()
+	{
+		cout << typeid(il.begin()).name() << endl;
+		for (int const* it = il.begin(); it != il.end(); it++)
+		{
+			push_back(*it);
+		}
+		cout << "FlitConstructor:\t" << this << endl;
 	}
 	ForwardList(ForwardList&& other) :ForwardList()
 	{
@@ -248,12 +260,24 @@ ForwardList operator+(const ForwardList& left, const ForwardList& right)
 	return fusion;
 }
 
+void Print(int arr[])
+{
+	cout << typeid(arr).name() << endl;
+	cout << sizeof(arr) / sizeof(arr[0]) << endl;
+	/*for (int i : arr)
+	{
+		cout << i << tab;
+	}
+	cout << endl;*/
+}
+
 //#define BASE_CHECK
 //#define OPERATOR_PLUS_CHECK
 //#define PERFORMANCE_CHECK
 //#define SUBSCRIPT_OPERATOR_CHEK
 //#define COPY_SEMANTIC_PERFORMANCE_CHECK
-#define MOVE_SEMANTIC_CHECK
+//#define MOVE_SEMANTIC_CHECK
+//#define RANGE_BASED_FOR_ARRAY
 
 void main()
 {
@@ -411,5 +435,29 @@ void main()
 
 #endif // MOVE_SEMANTIC_CHECK
 
+
+
+#ifdef RANGE_BASED_FOR_ARRAY
+
+	int arr[] = { 3, 5, 8, 13, 21 };
+	for (int i = 0; i < sizeof(arr) / sizeof(arr[0]); i++)
+	{
+		cout << arr[i] << tab;
+	}
+	cout << endl;
+
+	for (int i : arr)
+	{
+		cout << i << tab;
+	}
+	cout << endl;
+	cout << typeid(arr).name() << endl;
+	Print(arr);
+
+#endif // RANGE_BASED_FOR_ARRAY
+
+	ForwardList list = { 3, 5, 8, 13, 21 };
+	list.print();
+	for (int i : list)cout << i << tab;cout << endl;
 
 }
