@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ForvardList", "ForvardList\
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "List", "List\List.vcxproj", "{78C43CAB-C875-4EC5-9E8A-A1D67FD6B437}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Recuresion", "Recuresion\Recuresion.vcxproj", "{12A06E1A-208A-4969-B101-597A90407749}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -41,6 +43,14 @@ Global
 		{78C43CAB-C875-4EC5-9E8A-A1D67FD6B437}.Release|x64.Build.0 = Release|x64
 		{78C43CAB-C875-4EC5-9E8A-A1D67FD6B437}.Release|x86.ActiveCfg = Release|Win32
 		{78C43CAB-C875-4EC5-9E8A-A1D67FD6B437}.Release|x86.Build.0 = Release|Win32
+		{12A06E1A-208A-4969-B101-597A90407749}.Debug|x64.ActiveCfg = Debug|x64
+		{12A06E1A-208A-4969-B101-597A90407749}.Debug|x64.Build.0 = Debug|x64
+		{12A06E1A-208A-4969-B101-597A90407749}.Debug|x86.ActiveCfg = Debug|Win32
+		{12A06E1A-208A-4969-B101-597A90407749}.Debug|x86.Build.0 = Debug|Win32
+		{12A06E1A-208A-4969-B101-597A90407749}.Release|x64.ActiveCfg = Release|x64
+		{12A06E1A-208A-4969-B101-597A90407749}.Release|x64.Build.0 = Release|x64
+		{12A06E1A-208A-4969-B101-597A90407749}.Release|x86.ActiveCfg = Release|Win32
+		{12A06E1A-208A-4969-B101-597A90407749}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
