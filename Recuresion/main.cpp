@@ -23,4 +23,6 @@ void elevator(int floar)
 	cout << "Вы на " << floar << " этаже" << endl;
 	elevator(floar - 1);
 	cout << "Вы на " << floar << " этаже" << endl;
+
+
 }
